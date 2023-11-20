@@ -1,0 +1,30 @@
+body {
+    background-color: lightblue;
+}
+
+.container {
+    background-color: #6fb7d8;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+    margin-bottom: 20px;
+}
+ legend {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+ }
+
+
+ .logo-container {
+    position: absolute;
+    top: 10px; 
+    left: 10px; 
+}
+
+.logo {
+    background-color: #6fb7d8 ;
+    width: 100px; 
+    height: auto;
+}

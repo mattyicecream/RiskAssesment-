@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLNB Risk Management Tool</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="logo-container">
+        <img src="LionLogo.jpg" alt="Nittany Lion National Bank Logo" class="logo">
+    </div>
+
+<div class="container mt-5">
+    <h2>NLNB Risk Assessments Tool</h2>
+    <h4> Select the appropiate response to each question to calculate risk score in each category. After calculation, a text file will download with your system results.</h4>
+    <form id="riskForm">
+        <fieldset>
+            <legend>Governance and Compliance</legend>
+
+            <!-- Question 1 -->
+            <div class="form-group">
+                <label for="governanceTeam">Is there a designated individual or team responsible for governing the IT system for NLNB?</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="governanceTeam" id="governanceTeamYes" value="yes" required>
+                    <label class="form-check-label" for="governanceTeamYes">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="governanceTeam" id="governanceTeamNo" value="no" required>
+                    <label class="form-check-label" for="governanceTeamNo">No</label>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="form-group">
+                <label for="governanceFramework">Is the Governance framework for IT system frequently reviewed and updated?</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="governanceFramework" id="governanceFrameworkYes" value="yes" required>
+                    <label class="form-check-label" for="governanceFrameworkYes">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="governanceFramework" id="governanceFrameworkNo" value="no" required>
+                    <label class="form-check-label" for="governanceFrameworkNo">No</label>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="form-group">
+                <label for="complianceEnsure">Does the IT system ensure compliance with relevant regulations and standards?</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="complianceEnsure" id="complianceEnsureYes" value="yes" required>
+                    <label class="form-check-label" for="complianceEnsureYes">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="complianceEnsure" id="complianceEnsureNo" value="no" required>
+                    <label class="form-check-label" for="complianceEnsureNo">No</label>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="form-group">
+                <label for="complianceAssessments">Are compliance assessments conducted regularly for the IT system?</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="complianceAssessments" id="complianceAssessmentsYes" value="yes" required>
+                    <label class="form-check-label" for="complianceAssessmentsYes">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="complianceAssessments" id="complianceAssessmentsNo" value="no" required>
+                    <label class="form-check-label" for="complianceAssessmentsNo">No</label>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="form-group">
+                <label for="changesTested">Are changes to the NLNB system tested and validated before implementation?</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="changesTested" id="changesTestedYes" value="yes" required>
+                    <label class="form-check-label" for="changesTestedYes">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="changesTested" id="changesTestedNo" value="no" required>
+                    <label class="form-check-label" for="changesTestedNo">No</label>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="form-group">
+                <label for="procedureCurrent">Is there a current procedure for updating, decommissioning, or testing current IT systems or infrastructure?</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="procedureCurrent" id="procedureCurrentYes" value="yes" required>
+                    <label class="form-check-label" for="procedureCurrentYes">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="procedureCurrent" id="procedureCurrentNo" value="no" required>
+                    <label class="form-check-label" for="procedureCurrentNo">No</label>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="form-group">
+                <label for="thirdParty">Is there any third party that has access to your systems</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="thirdParty" id="thirdPartyYes" value="yes" required>
+                    <label class="form-check-label" for="thirdPartyYes">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="thirdParty" id="thirdPartyNo" value="no" required>
+                    <label class="form-check-label" for="thirdPartyNo">No</label>
+                </div>
+            </div>
+
+          
+        </fieldset>
+<!-- Security Section -->
+<fieldset>
+    <legend>System Security</legend>
+
+    <!-- Question 1 -->
+    <div class="form-group">
+        <label for="confidentialityIntegrity">Are measures in place to ensure the confidentiality and integrity of sensitive data within the IT system?</label>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="confidentialityIntegrity" id="confidentialityIntegrityYes" value="yes" required>
+            <label class="form-check-label" for="confidentialityIntegrityYes">Yes</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="confidentialityIntegrity" id="confidentialityIntegrityNo" value="no" required>
+            <label class="form-check-label" for="confidentialityIntegrityNo">No</label>
+        </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="form-group">
+        <label for="securityProtocolUpdate">Are security protocols for data storage and transmission regularly updated?</label>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="securityProtocolUpdate" id="securityProtocolUpdateYes" value="yes" required>
+            <label class="form-check-label" for="securityProtocolUpdateYes">Yes</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="securityProtocolUpdate" id="securityProtocolUpdateNo" value="no" required>
+            <label class="form-check-label" for="securityProtocolUpdateNo">No</label>
+        </div>
+    </div>
+
+    <!-- Question 3 -->
+<div class="form-group">
+    <label for="userAuthentication">Are user authentication and access control methods implemented within the IT system?</label>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="userAuthentication" id="userAuthenticationYes" value="yes" required>
+        <label class="form-check-label" for="userAuthenticationYes">Yes</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="userAuthentication" id="userAuthenticationNo" value="no" required>
+        <label class="form-check-label" for="userAuthenticationNo">No</label>
+    </div>
+</div>
+
+<!-- Question 4 -->
+<div class="form-group">
+    <label for="accessBasedOnRoles">Is access to sensitive data restricted based on user roles?</label>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="accessBasedOnRoles" id="accessBasedOnRolesYes" value="yes" required>
+        <label class="form-check-label" for="accessBasedOnRolesYes">Yes</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="accessBasedOnRoles" id="accessBasedOnRolesNo" value="no" required>
+        <label class="form-check-label" for="accessBasedOnRolesNo">No</label>
+    </div>
+</div>
+
+<!-- Question 5 -->
+<div class="form-group">
+    <label for="identifyAddressVulnerabilities">Are procedures in place to identify and address vulnerabilities in the IT system?</label>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="identifyAddressVulnerabilities" id="identifyAddressVulnerabilitiesYes" value="yes" required>
+        <label class="form-check-label" for="identifyAddressVulnerabilitiesYes">Yes</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="identifyAddressVulnerabilities" id="identifyAddressVulnerabilitiesNo" value="no" required>
+        <label class="form-check-label" for="identifyAddressVulnerabilitiesNo">No</label>
+    </div>
+</div>
+
+<!-- Question 6 -->
+<div class="form-group">
+    <label for="vulnerabilityScans">Are vulnerability scans and assessments conducted regularly?</label>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="vulnerabilityScans" id="vulnerabilityScansYes" value="yes" required>
+        <label class="form-check-label" for="vulnerabilityScansYes">Yes</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="vulnerabilityScans" id="vulnerabilityScansNo" value="no" required>
+        <label class="form-check-label" for="vulnerabilityScansNo">No</label>
+    </div>
+</div>
+
+<!-- Question 7 -->
+<div class="form-group">
+    <label for="dataEncryption">Is data encrypted, both in transit and at rest, within the IT system?</label>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="dataEncryption" id="dataEncryptionYes" value="yes" required>
+        <label class="form-check-label" for="dataEncryptionYes">Yes</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="dataEncryption" id="dataEncryptionNo" value="no" required>
+        <label class="form-check-label" for="dataEncryptionNo">No</label>
+    </div>
+</div>
+
+<!-- Question 8 -->
+<div class="form-group">
+    <label for="encryptionStandards">Are encryption standards followed?</label>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="encryptionStandards" id="encryptionStandardsYes" value="yes" required>
+        <label class="form-check-label" for="encryptionStandardsYes">Yes</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="encryptionStandards" id="encryptionStandardsNo" value="no" required>
+        <label class="form-check-label" for="encryptionStandardsNo">No</label>
+    </div>
+</div>
+
+<!-- Question 9 -->
+<div class="form-group">
+    <label for="networkMonitoring">Is the IT network monitored for potential security threats?</label>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="networkMonitoring" id="networkMonitoringYes" value="yes" required>
+        <label class="form-check-label" for="networkMonitoringYes">Yes</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="networkMonitoring" id="networkMonitoringNo" value="no" required>
+        <label class="form-check-label" for="networkMonitoringNo">No</label>
+    </div>
+</div>
+
+<!-- System Operations Section -->
+<fieldset>
+    <legend>System Operations</legend>
+
+    <!-- Question 1 -->
+    <div class="form-group">
+        <label for="securityIncidentProtocol">Is there a protocol for responding to security incidents within the IT system?</label>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="securityIncidentProtocol" id="securityIncidentProtocolYes" value="yes" required>
+            <label class="form-check-label" for="securityIncidentProtocolYes">Yes</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="securityIncidentProtocol" id="securityIncidentProtocolNo" value="no" required>
+            <label class="form-check-label" for="securityIncidentProtocolNo">No</label>
+        </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="form-group">
+        <label for="quickResponseMitigation">Can the IT team respond to and mitigate a security incident quickly?</label>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="quickResponseMitigation" id="quickResponseMitigationYes" value="yes" required>
+            <label class="form-check-label" for="quickResponseMitigationYes">Yes</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="quickResponseMitigation" id="quickResponseMitigationNo" value="no" required>
+            <label class="form-check-label" for="quickResponseMitigationNo">No</label>
+        </div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="form-group">
+        <label for="softwarePatchesUpdates">Is there a updated and tested disaster recovery plan inplace?</label>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="softwarePatchesUpdates" id="softwarePatchesUpdatesYes" value="yes" required>
+            <label class="form-check-label" for="softwarePatchesUpdatesYes">Yes</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="softwarePatchesUpdates" id="softwarePatchesUpdatesNo" value="no" required>
+            <label class="form-check-label" for="softwarePatchesUpdatesNo">No</label>
+        </div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="form-group">
+        <label for="testingPatchesDeployment">Is there appropiate segregation of duties between the NLNB IT systems team?</label>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="testingPatchesDeployment" id="testingPatchesDeploymentYes" value="yes" required>
+            <label class="form-check-label" for="testingPatchesDeploymentYes">Yes</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="testingPatchesDeployment" id="testingPatchesDeploymentNo" value="no" required>
+            <label class="form-check-label" for="testingPatchesDeploymentNo">No</label>
+        </div>
+    </div>
+<!-- Question 5 -->
+<div class="form-group">
+    <label for="dataBackupManagement">Is data backup managed within the IT system?</label>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="dataBackupManagement" id="dataBackupManagementYes" value="yes" required>
+        <label class="form-check-label" for="dataBackupManagementYes">Yes</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="dataBackupManagement" id="dataBackupManagementNo" value="no" required>
+        <label class="form-check-label" for="dataBackupManagementNo">No</label>
+    </div>
+</div>
+
+<!-- Question 6 -->
+<div class="form-group">
+    <label for="backupTesting">Are data backups tested for reliability and recoverability regularly?</label>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="backupTesting" id="backupTestingYes" value="yes" required>
+        <label class="form-check-label" for="backupTestingYes">Yes</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="backupTesting" id="backupTestingNo" value="no" required>
+        <label class="form-check-label" for="backupTestingNo">No</label>
+    </div>
+</div>
+
+<!-- Question 7 -->
+<div class="form-group">
+    <label for="securityTraining">Are IT system administrators and users regularly trained on security protocols and best practices?</label>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="securityTraining" id="securityTrainingYes" value="yes" required>
+        <label class="form-check-label" for="securityTrainingYes">Yes</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="securityTraining" id="securityTrainingNo" value="no" required>
+        <label class="form-check-label" for="securityTrainingNo">No</label>
+    </div>
+</div>
+
+<!-- Question 8 -->
+<div class="form-group">
+    <label for="employeeComplianceMonitoring">Is there a system to monitor and assess employee compliance with IT security policies?</label>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="employeeComplianceMonitoring" id="employeeComplianceMonitoringYes" value="yes" required>
+        <label class="form-check-label" for="employeeComplianceMonitoringYes">Yes</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="employeeComplianceMonitoring" id="employeeComplianceMonitoringNo" value="no" required>
+        <label class="form-check-label" for="employeeComplianceMonitoringNo">No</label>
+    </div>
+</div>
+
+<!-- Question 9 -->
+<div class="form-group">
+    <label for="securityAudits">Are regular security audits conducted on the IT infrastructure?</label>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="securityAudits" id="securityAuditsYes" value="yes" required>
+        <label class="form-check-label" for="securityAuditsYes">Yes</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="securityAudits" id="securityAuditsNo" value="no" required>
+        <label class="form-check-label" for="securityAuditsNo">No</label>
+    </div>
+</div>
+
+<!-- Question 10 -->
+<div class="form-group">
+    <label for="maintenanceSecurityManagement">Is the maintenance and security of servers, databases, and networks actively managed?</label>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="maintenanceSecurityManagement" id="maintenanceSecurityManagementYes" value="yes" required>
+        <label class="form-check-label" for="maintenanceSecurityManagementYes">Yes</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="maintenanceSecurityManagement" id="maintenanceSecurityManagementNo" value="no" required>
+        <label class="form-check-label" for="maintenanceSecurityManagementNo">No</label>
+    </div>
+</div>
+
+    
+
+</fieldset>
+
+
+        
+
+        <button type="button" class="btn btn-primary" onclick="calculateRisk()">Calculate Risk</button>
+    </form>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
